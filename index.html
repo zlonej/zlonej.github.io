@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>zlonej</title>
+    <meta name="description" content="Zlonej — jailbreak repo & TrollStore apps">
+    <meta name="theme-color" content="#101014">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <canvas id="rain-canvas"></canvas>
+
+    <main class="page">
+
+        <!-- 头像 + 身份 -->
+        <section class="hero">
+            <a href="https://github.com/zlonej" target="_blank" rel="noopener">
+                <img src="assets/img/zlonej.png" alt="Zlonej" class="avatar">
+            </a>
+            <div class="hero-text">
+                <h1>zlonej</h1>
+                <p class="subtitle">iOS Jailbreak & TrollStore</p>
+            </div>
+        </section>
+
+        <div class="divider"></div>
+
+        <!-- 越狱源 -->
+        <section class="block">
+            <p class="label">Jailbreak Repo</p>
+            <div class="url-bar">
+                <code id="repo-url-text"></code>
+                <button class="url-copy" onclick="copyURL('https://zlonej.github.io/repo/')" aria-label="复制">
+                    <svg viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+                </button>
+            </div>
+            <div class="pills">
+                <a class="pill" href="sileo://source/https://zlonej.github.io/repo/">
+                    <img src="assets/icon/sileo.png" alt="">Sileo
+                </a>
+                <a class="pill" href="zbra://sources/add/https://zlonej.github.io/repo/">
+                    <img src="assets/icon/zebra.png" alt="">Zebra
+                </a>
+                <a class="pill" href="cydia://url/https://cydia.saurik.com/api/share#?source=https://zlonej.github.io/repo/">
+                    <img src="assets/icon/cydia.png" alt="">Cydia
+                </a>
+                <a class="pill" href="apt-repo://https://zlonej.github.io/repo/">
+                    <img src="assets/icon/saily.png" alt="">Saily
+                </a>
+            </div>
+        </section>
+
+        <div class="divider"></div>
+
+        <!-- TrollStore -->
+        <section class="block">
+            <div class="label-row">
+                <p class="label">TrollStore</p>
+                <span class="meta" id="tipa-count"></span>
+            </div>
+            <div class="app-list" id="tipa-list">
+                <p class="empty">No apps yet</p>
+            </div>
+        </section>
+
+        <footer>zlonej · 2024</footer>
+    </main>
+
+    <div id="toast" class="toast">
+        <svg viewBox="0 0 24 24" width="13" height="13"><polyline points="20 6 9 17 4 12"/></svg>
+        Copied
+    </div>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

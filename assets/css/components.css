@@ -1,0 +1,209 @@
+/* -------- 源地址 -------- */
+.url-bar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 11px 14px;
+    background: var(--fg);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    margin-bottom: 16px;
+}
+
+.url-bar code {
+    flex: 1;
+    font-family: var(--mono);
+    font-size: .78rem;
+    color: var(--text-sub);
+    user-select: all;
+    word-break: break-all;
+    min-height: 1em;
+}
+
+.url-copy {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 3px;
+    display: flex;
+    opacity: .3;
+    transition: opacity .2s;
+}
+
+.url-copy svg {
+    width: 13px;
+    height: 13px;
+    fill: none;
+    stroke: var(--text);
+    stroke-width: 2;
+}
+
+.url-copy:hover { opacity: .8; }
+
+/* -------- pills -------- */
+.pills {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+}
+
+.pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 14px;
+    background: var(--fg);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    color: var(--text);
+    text-decoration: none;
+    font-size: .85rem;
+    transition: border-color .25s, color .2s, background .2s;
+}
+
+.pill img {
+    width: 22px;
+    height: 22px;
+    border-radius: 5px;
+}
+
+.pill:hover {
+    border-color: var(--accent-line);
+    color: var(--text-hi);
+    background: var(--accent-dim);
+}
+
+/* -------- app list -------- */
+.app-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    max-height: 310px;
+    overflow-y: auto;
+    padding-right: 8px;
+}
+
+.app-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 4px;
+    border-bottom: 1px solid var(--line);
+}
+
+.app-row:last-child { border-bottom: none; }
+
+.app-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 10px;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.app-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.app-name {
+    font-size: .9rem;
+    color: var(--text-hi);
+    font-weight: 500;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.app-ver {
+    font-size: .68rem;
+    color: var(--text-sub);
+    font-family: var(--mono);
+    margin-top: 2px;
+}
+
+.app-actions {
+    display: flex;
+    gap: 4px;
+    flex-shrink: 0;
+}
+
+.app-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 6px 10px;
+    border-radius: 6px;
+    font-size: .75rem;
+    text-decoration: none;
+    white-space: nowrap;
+    color: var(--text);
+    background: var(--fg);
+    border: 1px solid var(--line);
+    transition: all .2s;
+}
+
+.app-btn svg {
+    width: 13px;
+    height: 13px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+}
+
+.app-btn:hover {
+    border-color: rgba(255,255,255,.08);
+    color: var(--text-hi);
+}
+
+.app-btn-primary {
+    background: var(--accent-dim);
+    border-color: var(--accent-line);
+    color: var(--accent);
+}
+
+.app-btn-primary:hover {
+    background: rgba(111,98,208,.14);
+}
+
+.empty {
+    padding: 18px 0;
+    text-align: center;
+    font-size: .74rem;
+    color: var(--text-sub);
+}
+
+/* -------- toast -------- */
+.toast {
+    position: fixed;
+    bottom: 28px;
+    left: 50%;
+    transform: translateX(-50%) translateY(6px);
+    background: var(--fg);
+    border: 1px solid var(--accent-line);
+    color: var(--text-hi);
+    padding: 6px 16px;
+    border-radius: 6px;
+    font-size: .74rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .25s;
+    z-index: 99;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.toast svg {
+    fill: none;
+    stroke: #6ee7a0;
+    stroke-width: 2.5;
+}
+
+.toast.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}

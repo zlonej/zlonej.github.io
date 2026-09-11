@@ -1,0 +1,105 @@
+/* -------- 页面容器 -------- */
+.page {
+    position: relative;
+    z-index: 1;
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 80px 28px 48px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* -------- hero -------- */
+.hero {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 0;
+}
+
+.avatar {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1.5px solid var(--line);
+    filter: grayscale(.12) brightness(.92);
+    transition: filter .4s, border-color .4s;
+    flex-shrink: 0;
+}
+
+.avatar:hover {
+    filter: grayscale(0) brightness(1);
+    border-color: var(--accent-line);
+}
+
+.hero-text h1 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--text-hi);
+    line-height: 1.2;
+}
+
+.subtitle {
+    font-size: .82rem;
+    color: var(--text-sub);
+    margin-top: 3px;
+    letter-spacing: .02em;
+}
+
+/* -------- 分割线 -------- */
+.divider {
+    height: 1px;
+    background: var(--line);
+    margin: 28px 0;
+}
+
+/* -------- 通用区块 -------- */
+.block { margin-bottom: 0; }
+
+.label {
+    font-size: .72rem;
+    font-weight: 500;
+    color: var(--text-sub);
+    text-transform: uppercase;
+    letter-spacing: .14em;
+    margin-bottom: 14px;
+}
+
+.label-row {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 12px;
+}
+
+.label-row .label { margin-bottom: 0; }
+
+.meta {
+    font-size: .68rem;
+    color: var(--text-sub);
+    font-family: var(--mono);
+    opacity: .7;
+}
+
+/* -------- footer -------- */
+footer {
+    margin-top: auto;
+    padding-top: 40px;
+    text-align: center;
+    font-size: .6rem;
+    color: var(--text-sub);
+    opacity: .3;
+    letter-spacing: .06em;
+}
+
+/* -------- 响应式 -------- */
+@media (max-width: 480px) {
+    html { font-size: 16px; }
+    .page { padding: 48px 20px 36px; }
+    .avatar { width: 68px; height: 68px; }
+    .hero { gap: 16px; }
+    .hero-text h1 { font-size: 1.25rem; }
+    .divider { margin: 24px 0; }
+}
